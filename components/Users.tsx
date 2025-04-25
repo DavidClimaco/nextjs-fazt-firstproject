@@ -2,7 +2,15 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
-export default function Users({ users } ) {
+type User = {
+    id: number;
+    first_name: string;
+    last_name: string;
+    email: string;
+    avatar: string;
+}
+
+export default function Users({ users }: { users: User[] }) {
   return (
     <ul>
       {users.map((user) => (
